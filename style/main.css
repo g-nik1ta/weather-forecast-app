@@ -1,0 +1,278 @@
+@font-face {
+    font-family: Roboto-Light;
+    src: url(../fonts/Roboto/Roboto-Light.ttf);
+}
+
+@font-face {
+    font-family: Roboto-Medium;
+    src: url(../fonts/Roboto/Roboto-Medium.ttf);
+}
+
+@font-face {
+    font-family: Advent-Thin;
+    src: url(../fonts/AdventPro/AdventPro-Thin.ttf);
+}
+
+@font-face {
+    font-family: VarelaRound-Regular;
+    src: url(../fonts/VarelaRound/VarelaRound-Regular.ttf);
+}
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+body {
+    height: 100vh;
+    background: linear-gradient(225deg,
+            rgba(176, 194, 202, 1) 0%,
+            rgba(90, 107, 116, 1) 100%);
+    display: flex;
+    justify-content: center;
+}
+
+
+
+main {
+    width: 55%;
+    height: 95%;
+}
+
+main header {
+    height: 13%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main header span {
+    text-transform: uppercase;
+    font-size: 36px;
+    font-family: Advent-Thin;
+    letter-spacing: 1px;
+    color: #fff;
+}
+
+
+
+main .content {
+    width: 100%;
+    height: 80%;
+}
+
+main .content .today-forecast {
+    height: 67%;
+    background-color: #315760;
+    padding: 20px 30px;
+}
+
+main .content .today-forecast .search-city {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+
+main .content .today-forecast .search-city .location img {
+    width: 34px;
+    vertical-align: sub;
+}
+
+main .content .today-forecast .search-city .location span {
+    font-size: 34px;
+    font-family: Roboto-Light;
+    color: #fff;
+}
+
+main .content .today-forecast .search-city .box-border {
+    width: 250px;
+    padding: 3px;
+    border-radius: 25px;
+    background: linear-gradient(212deg,
+            rgba(40, 240, 158, 1) 0%,
+            rgba(18, 194, 211, 1) 50%,
+            rgba(1, 160, 249, 1) 100%);
+}
+
+main .content .today-forecast .search-city .box-border input {
+    padding: 10px 15px;
+    width: 100%;
+    font-size: 18px;
+    background-color: #315760;
+    color: #fff;
+    border: none;
+    border-radius: inherit;
+    box-shadow: 0 0 30px -5px rgb(0 0 0 / 25%);
+}
+
+main .content .today-forecast .search-city .box-border input:focus {
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgb(114 237 242 / 25%);
+}
+
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+    display: none;
+}
+
+main .content .today-forecast .search-city .box-border img {
+    width: 22px;
+    position: absolute;
+    cursor: pointer;
+    right: 16px;
+    top: 12px;
+    transition: transform .2s ease-in-out;
+}
+
+main .content .today-forecast .search-city .box-border img:hover {
+    transform: scale(1.1);
+}
+
+
+main .content .today-forecast .weather-information {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+
+main .content .today-forecast .weather-information .text-info {
+    color: #fff;
+    font-size: 20px;
+    font-family: Roboto-Light;
+}
+
+main .content .today-forecast .weather-information .text-info .date {
+    font-size: 36px;
+    margin-bottom: 4px;
+    text-transform: uppercase;
+    font-family: VarelaRound-Regular;
+}
+
+main .content .today-forecast .weather-information .text-info .temp {
+    font-size: 24px;
+    font-family: VarelaRound-Regular;
+    display: flex;
+}
+
+main .content .today-forecast .weather-information .text-info .temp > span {
+    font-size: 60px;
+}
+
+main .content .today-forecast .weather-information .text-info .temp .units {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: 12px;
+}
+
+main .content .today-forecast .weather-information .text-info .temp .units span {
+    cursor: pointer;
+}
+
+main .content .today-forecast .weather-information .text-info .temp .units span:first-child {
+    border-bottom: 2px solid #fff;
+    font-weight: 900;
+}
+
+main .content .today-forecast .weather-information .text-info .description {
+    font-size: 24px;
+    font-family: VarelaRound-Regular;
+    margin-bottom: 12px;
+}
+
+main .content .today-forecast .weather-information .text-info .add-info {
+    width: 320px;
+}
+
+main .content .today-forecast .weather-information .text-info .add-info>div {
+    margin-bottom: 3px;
+    display: flex;
+    justify-content: space-between;
+}
+
+main .content .today-forecast .weather-information .text-info .add-info>div>span:first-child {
+    font-family: Roboto-Medium;
+}
+
+main .content .today-forecast .weather-information .text-info .sunrise-sunset {
+    display: flex;
+}
+
+main .content .today-forecast .weather-information .text-info .sunrise-sunset img {
+    width: 30px;
+    vertical-align: middle;
+}
+
+main .content .today-forecast .weather-information .icon-info {
+    width: 250px;
+    height: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main .content .today-forecast .weather-information .icon-info img {
+    width: 150px;
+}
+
+
+main .content .weekly-forecast {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: 1fr;
+    height: 33%;
+}
+
+main .content .weekly-forecast .next-day {
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, 1fr);
+    text-align: center;
+    align-items: center;
+    color: #fff;
+    font-size: 26px;
+    font-family: Roboto-Light;
+    border: 5px solid rgba(255, 255, 255, 0.24);
+    border-left: none;
+    width: 100%;
+    height: 100%;
+}
+
+main .content .weekly-forecast .next-day:first-child {
+    border-left: 5px solid rgba(255, 255, 255, 0.24);
+}
+
+main .content .weekly-forecast .next-day > .date {
+    text-transform: uppercase;
+}
+
+
+
+main footer {
+    height: 7%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main footer span {
+    font-family: Roboto-Light;
+    font-size: 18px;
+    color: #fff;
+}
+
+main footer span a {
+    color: #c5c5c5;
+}
+
+main footer span a:hover {
+    text-shadow: 3px 2px 3px rgba(255, 255, 255, .2);
+}

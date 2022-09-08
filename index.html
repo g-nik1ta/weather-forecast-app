@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Forecast</title>
+    <link rel="stylesheet" href="style/main.css">
+    <link rel="stylesheet" href="style/adapt.css">
+    <link rel="shortcut icon" href="images/rainy-day.png" type="image/png">
+</head>
+
+<body>
+    <main>
+        <header>
+            <span>
+                - Weather Forecast on JS -
+            </span>
+        </header>
+
+        <div class="content">
+            <div class="today-forecast">
+
+                <div class="search-city">
+                    <div class="location">
+                        <img src="images/location.png" alt="image">
+                        <span id="cityName">Kyiv | UA</span>
+                    </div>
+                    <div class="box-border">
+                        <input id="city" type="search" name="search" placeholder="Enter a city">
+                        <img id="loupe" src="images/loupe.png" alt="img">
+                    </div>
+                </div>
+
+                <div class="weather-information">
+                    <div class="text-info">
+                        <div class="date">
+                            <span id="date"> Monday, May 23 </span>
+                        </div>
+
+                        <div class="temp">
+                            <span class="tempValue" id="temp"> 27° </span>
+                            <div class="units">
+                                <span id="celsius">C</span>
+                                <span id="fahrenheit">F</span>
+                            </div>
+                        </div>
+
+                        <div class="description">
+                            <span id="description"> Moderate rain </span>
+                        </div>
+
+                        <div class="add-info">
+
+                            <div class="cloundess">
+                                <span> Cloundess </span>
+                                <span id="cloudness"> 5% </span>
+                            </div>
+
+                            <div class="humidity">
+                                <span> Humidity </span>
+                                <span id="humidity"> 61% </span>
+                            </div>
+
+                            <div class="wind">
+                                <span> Wind </span>
+                                <span id="wind"> 0.62 m/s </span>
+                            </div>
+                            
+                            <div class="sunrise-sunset">
+                                <div class="sunrise">
+                                    <img src="images/sunrise.png" alt="img">
+                                    <span id="sunrise"> 6:37 </span>
+                                </div>
+                                <div class="sunset">
+                                    <img src="images/sunset.png" alt="image">
+                                    <span id="sunset"> 19:52 </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="weather-item" class="icon-info">
+                        <img src="" alt="image">
+                    </div>
+                </div>
+
+            </div>
+            <div class="weekly-forecast">
+                <div class="next-day">
+                    <div class="date">tue</div>
+                    <div class="icon">
+                        <img src="" alt="image">
+                    </div>
+                    <div class="temp tempValue">25°</div>
+                </div>
+                <div class="next-day">
+                    <div class="date">wed</div>
+                    <div class="icon">
+                        <img src="" alt="image">
+                    </div>
+                    <div class="temp tempValue">20°</div>
+                </div>
+                <div class="next-day">
+                    <div class="date">thu</div>
+                    <div class="icon">
+                        <img src="" alt="image">
+                    </div>
+                    <div class="temp tempValue">19°</div>
+                </div>
+                <div class="next-day">
+                    <div class="date">fir</div>
+                    <div class="icon">
+                        <img src="" alt="image">
+                    </div>
+                    <div class="temp tempValue">15°</div>
+                </div>
+                <div class="next-day">
+                    <div class="date">sat</div>
+                    <div class="icon">
+                        <img src="" alt="image">
+                    </div>
+                    <div class="temp tempValue">-5°</div>
+                </div>
+                <div class="next-day">
+                    <div class="date">sun</div>
+                    <div class="icon">
+                        <img src="" alt="image">
+                    </div>
+                    <div class="temp tempValue">25°</div>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <span>
+                This project was developed by <a target="_blank" href="https://github.com/g-nik1ta">Nikita Gonohov</a>
+            </span>
+        </footer>
+    </main>
+
+    <script src="scripts/main.js"></script>
+</body>
+
+</html>
