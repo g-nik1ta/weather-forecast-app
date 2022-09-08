@@ -23,7 +23,7 @@ let options = {
 }
 
 function showCity(cityName) {
-    const locationUrl = `http://api.openweathermap.org/geo/1.0/direct?q=${cityName}&appid=${apiKey}`;
+    const locationUrl = `https://api.openweathermap.org/geo/1.0/direct?q=${cityName}&appid=${apiKey}`;
 
     fetch(locationUrl)
         .then(response => response.json())
