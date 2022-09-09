@@ -52,11 +52,39 @@ function getWeatherInfo(lat, lon) {
             description.innerHTML = `${data.weather[0].description}`;
             weatherItem.innerHTML = `<img src="http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png">`;
             wind.innerHTML = `${(data.wind.speed / 1000 * 60 * 60).toFixed(2)} km/h`;
-            sunrise.innerHTML = `${(new Date(data.sys.sunrise * 1000)).getHours()}:${(new Date(data.sys.sunrise * 1000)).getMinutes()}`;
-            sunset.innerHTML = `${(new Date(data.sys.sunset * 1000)).getHours()}:${(new Date(data.sys.sunset * 1000)).getMinutes()}`;
+
+            let sunriseDate = new Date(data.sys.sunrise * 1000);
+            let sunsetDate = new Date(data.sys.sunset * 1000);
+            sunrise.innerHTML = `${sunriseDate.getHours()}:${sunriseDate.getMinutes() > 10 ? sunriseDate.getMinutes() : '0' + sunriseDate.getMinutes()}`;
+            sunset.innerHTML = `${sunsetDate.getHours()}:${sunsetDate.getMinutes() > 10 ? sunsetDate.getMinutes() : '0' + sunsetDate.getMinutes()}`;
+        })
+        .catch(error => console.log(error.message));
+
+    const nextDaysWeatherUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${apiKey}`;
+    fetch(nextDaysWeatherUrl)
+        .then(response => response.json())
+        .then(data => {
+            // console.log(data);
+            const nextDays = document.querySelectorAll(".next-day");
+            let indexDays = 8;
+            nextDays.forEach(element => {
+                element.querySelector(".date").innerHTML = new Intl.DateTimeFormat('en-US', { weekday: 'short' }).format(new Date(data.list[indexDays].dt * 1000));
+                element.querySelector(".icon").innerHTML = `<img src="http://openweathermap.org/img/wn/${data.list[indexDays].weather[0].icon}@2x.png">`;
+
+                let tempMin = 10000;
+                let tempMax = 0;
+                for (let i = 0; i < 8; i++) {
+                    if (tempMin > data.list[indexDays + i].main.temp) tempMin = data.list[indexDays + i].main.temp;
+                    if (tempMax < data.list[indexDays + i].main.temp) tempMax = data.list[indexDays + i].main.temp;
+                }
+                element.querySelector(".temp").innerHTML = `<span class="tempValue">${Math.round(tempMin - 273)}°</span> / <span class="tempValue">${Math.round(tempMax - 273)}°</span>`;
+                indexDays += 8;
+            });
         })
         .catch(error => console.log(error.message));
 }
+
+
 
 
 function success(position) {
@@ -78,9 +106,6 @@ window.addEventListener("load", () => {
         navigator.geolocation.getCurrentPosition(success, error);
     }
 })
-
-
-
 
 
 

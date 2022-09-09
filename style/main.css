@@ -224,18 +224,16 @@ main .content .today-forecast .weather-information .icon-info img {
 
 
 main .content .weekly-forecast {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    grid-template-rows: 1fr;
+    display: flex;
+    justify-content: space-between  ;
     height: 33%;
 }
 
 main .content .weekly-forecast .next-day {
     margin: auto;
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(3, 1fr);
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
     color: #fff;
     font-size: 26px;
@@ -252,6 +250,10 @@ main .content .weekly-forecast .next-day:first-child {
 
 main .content .weekly-forecast .next-day > .date {
     text-transform: uppercase;
+}
+
+main .content .weekly-forecast .next-day > .icon img {
+    width: 90px;
 }
 
 
