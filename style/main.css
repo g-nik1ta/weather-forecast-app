@@ -75,6 +75,7 @@ main .content .today-forecast .search-city {
     display: flex;
     justify-content: space-between;
     position: relative;
+    align-items: flex-start;
 }
 
 main .content .today-forecast .search-city .location img {
@@ -89,8 +90,10 @@ main .content .today-forecast .search-city .location span {
 }
 
 main .content .today-forecast .search-city .box-border {
-    width: 250px;
+    min-width: 250px;
+    position: relative;
     padding: 3px;
+    margin-left: 10px;
     border-radius: 25px;
     background: linear-gradient(212deg,
             rgba(40, 240, 158, 1) 0%,
@@ -181,12 +184,6 @@ main .content .today-forecast .weather-information .text-info .temp .units span:
     font-weight: 900;
 }
 
-main .content .today-forecast .weather-information .text-info .description {
-    font-size: 24px;
-    font-family: VarelaRound-Regular;
-    margin-bottom: 12px;
-}
-
 main .content .today-forecast .weather-information .text-info .add-info {
     width: 320px;
 }
@@ -214,18 +211,29 @@ main .content .today-forecast .weather-information .icon-info {
     width: 250px;
     height: 250px;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
+    justify-content: space-around;
 }
 
 main .content .today-forecast .weather-information .icon-info img {
     width: 150px;
 }
 
+main .content .today-forecast .weather-information .icon-info .description {
+    font-size: 24px;
+    color: #fff;
+    font-family: VarelaRound-Regular;
+    margin-bottom: 12px;
+}
+
 
 main .content .weekly-forecast {
-    display: flex;
-    justify-content: space-between  ;
+    /* display: flex;
+    justify-content: space-between; */
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr;
     height: 33%;
 }
 
@@ -238,9 +246,10 @@ main .content .weekly-forecast .next-day {
     color: #fff;
     font-size: 26px;
     font-family: Roboto-Light;
-    border: 5px solid rgba(255, 255, 255, 0.24);
+    border: 6px solid rgba(255, 255, 255, 0.24);
     border-left: none;
     width: 100%;
+    min-width: 150px;
     height: 100%;
 }
 
@@ -269,6 +278,8 @@ main footer span {
     font-family: Roboto-Light;
     font-size: 18px;
     color: #fff;
+    padding: 0 10px;
+    text-align: center;
 }
 
 main footer span a {

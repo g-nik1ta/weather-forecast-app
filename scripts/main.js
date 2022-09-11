@@ -6,7 +6,7 @@ const city = document.querySelector("#cityName");
 const cloudness = document.querySelector("#cloudness");
 const humidity = document.querySelector("#humidity");
 const temp = document.querySelector("#temp");
-const description = document.querySelector("#description");
+// const description = document.querySelector("#description");
 const weatherItem = document.querySelector("#weather-item");
 const wind = document.querySelector("#wind");
 const celsius = document.querySelector("#celsius");
@@ -49,8 +49,8 @@ function getWeatherInfo(lat, lon) {
             cloudness.innerHTML = `${data.clouds.all}%`;
             humidity.innerHTML = `${data.main.humidity}%`;
             temp.innerHTML = `${Math.round(data.main.temp - 273)}°`;
-            description.innerHTML = `${data.weather[0].description}`;
             weatherItem.innerHTML = `<img src="http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png">`;
+            weatherItem.innerHTML += `<span class="description">${data.weather[0].description}</span>`;
             wind.innerHTML = `${(data.wind.speed / 1000 * 60 * 60).toFixed(2)} km/h`;
 
             let sunriseDate = new Date(data.sys.sunrise * 1000);
