@@ -1,12 +1,12 @@
 const apiKey = 'efb3951bf73e82a7d36e65dca67ca856';
 
 const loupe = document.querySelector("#loupe");
+const myCity = document.querySelector("#my-city");
 const inputCity = document.querySelector("#city");
 const city = document.querySelector("#cityName");
 const cloudness = document.querySelector("#cloudness");
 const humidity = document.querySelector("#humidity");
 const temp = document.querySelector("#temp");
-// const description = document.querySelector("#description");
 const weatherItem = document.querySelector("#weather-item");
 const wind = document.querySelector("#wind");
 const celsius = document.querySelector("#celsius");
@@ -49,7 +49,7 @@ function getWeatherInfo(lat, lon) {
             cloudness.innerHTML = `${data.clouds.all}%`;
             humidity.innerHTML = `${data.main.humidity}%`;
             temp.innerHTML = `${Math.round(data.main.temp - 273)}°`;
-            weatherItem.innerHTML = `<img src="http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png">`;
+            weatherItem.innerHTML = `<img src="http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png" alt="weather">`;
             weatherItem.innerHTML += `<span class="description">${data.weather[0].description}</span>`;
             wind.innerHTML = `${(data.wind.speed / 1000 * 60 * 60).toFixed(2)} km/h`;
 
@@ -68,8 +68,8 @@ function getWeatherInfo(lat, lon) {
             const nextDays = document.querySelectorAll(".next-day");
             let indexDays = 8;
             nextDays.forEach(element => {
-                element.querySelector(".date").innerHTML = new Intl.DateTimeFormat('en-US', { weekday: 'short' }).format(new Date(data.list[indexDays].dt * 1000));
-                element.querySelector(".icon").innerHTML = `<img src="http://openweathermap.org/img/wn/${data.list[indexDays].weather[0].icon}@2x.png">`;
+                element.querySelector(".day-of-the-week").innerHTML = new Intl.DateTimeFormat('en-US', { weekday: 'short' }).format(new Date(data.list[indexDays].dt * 1000));
+                element.querySelector(".icon").setAttribute("src", `http://openweathermap.org/img/wn/${data.list[indexDays].weather[0].icon}@2x.png`);
 
                 let tempMin = 10000;
                 let tempMax = 0;
@@ -84,9 +84,6 @@ function getWeatherInfo(lat, lon) {
         .catch(error => console.log(error.message));
 }
 
-
-
-
 function success(position) {
     const latitude = position.coords.latitude;
     const longitude = position.coords.longitude;
@@ -98,23 +95,28 @@ function error() {
     console.log('Невозможно получить ваше местоположение');
 }
 
+
+
 window.addEventListener("load", () => {
+    showCity('kiev');
+    let today = new Date();
+    document.querySelector("#date").innerHTML = today.toLocaleDateString("en-US", options);
+})
+
+loupe.addEventListener("click", () => {
+    showCity(inputCity.value);
+})
+inputCity.addEventListener("keydown", function (e) {
+    if (e.key == "Enter") showCity(inputCity.value);
+})
+
+myCity.addEventListener("click", () => {
     if (!navigator.geolocation) {
         console.log('Geolocation не поддерживается вашим браузером');
     } else {
         console.log('Определение местоположения…');
         navigator.geolocation.getCurrentPosition(success, error);
     }
-})
-
-
-
-loupe.addEventListener("click", () => {
-    showCity(inputCity.value);
-})
-
-inputCity.addEventListener("keydown", function (e) {
-    if (e.key == "Enter") showCity(inputCity.value);
 })
 
 
@@ -130,7 +132,6 @@ celsius.addEventListener("click", () => {
         tempUnits = !tempUnits;
     }
 })
-
 fahrenheit.addEventListener("click", () => {
     if (!tempUnits) {
         fahrenheit.style.fontWeight = "900";
@@ -143,7 +144,6 @@ fahrenheit.addEventListener("click", () => {
         tempUnits = !tempUnits;
     }
 })
-
 
 setInterval(() => {
     let today = new Date();

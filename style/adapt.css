@@ -21,24 +21,24 @@
         font-size: 26px;
     }
 
-    main .content .today-forecast .search-city .location img {
+    main .content .today-forecast .city .location .location-img {
         width: 40px;
     }
 
-    main .content .today-forecast .search-city .location span {
+    main .content .today-forecast .city .location .city-name {
         font-size: 40px;
     }
 
-    main .content .today-forecast .search-city .box-border {
+    main .content .today-forecast .city .gradient-box {
         width: 320px;
         padding: 4px;
     }
 
-    main .content .today-forecast .search-city .box-border input {
+    main .content .today-forecast .city .gradient-box .search-city {
         height: 100%;
     }
 
-    main .content .today-forecast .weather-information .text-info .add-info {
+    main .content .today-forecast .weather-information .text-info .main-info {
         line-height: 1.5;
         margin-top: 10px;
     }
@@ -47,7 +47,7 @@
         font-size: 42px;
     }
 
-    main .content .today-forecast .weather-information .text-info .temp > span {
+    main .content .today-forecast .weather-information .text-info .temp .tempValue {
         font-size: 70px;
     }
 
@@ -78,7 +78,7 @@
         font-size: 40px;
     }
 
-    main .content .weekly-forecast .next-day > .icon img {
+    main .content .weekly-forecast .next-day .icon {
         width: 130px;
     }
 }
@@ -122,11 +122,11 @@
         align-items: center;
     }
 
-    main .content .today-forecast .search-city {
+    main .content .today-forecast .city {
         flex-direction: column-reverse;
     }
 
-    main .content .today-forecast .search-city .box-border {
+    main .content .today-forecast .city .gradient-box {
         margin-left: 0;
         margin-bottom: 10px;
         width: 100%;
@@ -204,11 +204,11 @@
         padding: 15px 10px;
     }
 
-    main .content .today-forecast .search-city .location span {
+    main .content .today-forecast .city .location .city-name {
         font-size: 26px;
     }
 
-    main .content .today-forecast .search-city .location img {
+    main .content .today-forecast .city .location .location-img {
         width: 26px;
     }
 
@@ -217,7 +217,7 @@
     }
 
     main .content .today-forecast .weather-information .icon-info img,
-    main .content .weekly-forecast .next-day > .icon img {
+    main .content .weekly-forecast .next-day .icon {
         width: 80px;
     }
 
@@ -229,7 +229,7 @@
         font-size: 30px;
     }
 
-    main .content .today-forecast .weather-information .text-info .temp > span {
+    main .content .today-forecast .weather-information .text-info .temp .tempValue {
         font-size: 52px;
     }
 
@@ -237,7 +237,7 @@
         font-size: 22px;
     }
 
-    main .content .today-forecast .weather-information .text-info .add-info {
+    main .content .today-forecast .weather-information .text-info .main-info {
         width: auto;
     }
 
@@ -263,20 +263,20 @@
         font-size: 17px;
     }
 
-    main .content .today-forecast .search-city .box-border {
+    main .content .today-forecast .city .gradient-box {
         min-width: auto;
     }
 
-    main .content .today-forecast .search-city .location span {
+    main .content .today-forecast .city .location .city-name {
         font-size: 22px;
     }
 
-    main .content .today-forecast .search-city .location img {
+    main .content .today-forecast .city .location .location-img {
         width: 22px;
     }
 
     main .content .today-forecast .weather-information .icon-info img, 
-    main .content .weekly-forecast .next-day > .icon img {
+    main .content .weekly-forecast .next-day .icon {
         width: 74px;
     }
 

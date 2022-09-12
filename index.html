@@ -8,7 +8,7 @@
     <title>Weather Forecast</title>
     <link rel="stylesheet" href="style/main.css">
     <link rel="stylesheet" href="style/adapt.css">
-    <link rel="shortcut icon" href="images/rainy-day.png" type="image/png">
+    <link rel="shortcut icon" href="images/favicon.png" type="image/png">
 </head>
 
 <body>
@@ -22,116 +22,95 @@
         <div class="content">
             <div class="today-forecast">
 
-                <div class="search-city">
+                <div class="city">
                     <div class="location">
-                        <img src="images/location.png" alt="image">
-                        <span id="cityName">Kyiv | UA</span>
+                        <img class="location-img" src="images/location.png" alt="loc">
+                        <span class="city-name" id="cityName">---- | --</span>
                     </div>
-                    <div class="box-border">
-                        <input id="city" type="search" name="search" placeholder="Enter a city">
-                        <img id="loupe" src="images/loupe.png" alt="img">
+                    <div class="gradient-box">
+                        <input id="city" class="search-city" type="search" name="search" placeholder="Enter city name">
+                        <img id="loupe" class="search-city-img" src="images/loupe.png" alt="search">
+                        <img id="my-city" class="my-city-img" src="images/my-location.png" alt="my-loc">
                     </div>
                 </div>
 
                 <div class="weather-information">
                     <div class="text-info">
                         <div class="date">
-                            <span id="date"> Monday, May 23 </span>
+                            <span id="date"> -------, --- -- </span>
                         </div>
 
                         <div class="temp">
-                            <span class="tempValue" id="temp"> 27° </span>
+                            <span class="tempValue" id="temp"> --° </span>
                             <div class="units">
                                 <span id="celsius">C</span>
                                 <span id="fahrenheit">F</span>
                             </div>
                         </div>
 
-                        <div class="add-info">
+                        <div class="main-info">
 
                             <div class="cloundess">
                                 <span> Cloundess </span>
-                                <span id="cloudness"> 5% </span>
+                                <span id="cloudness"> -% </span>
                             </div>
 
                             <div class="humidity">
                                 <span> Humidity </span>
-                                <span id="humidity"> 61% </span>
+                                <span id="humidity"> --% </span>
                             </div>
 
                             <div class="wind">
                                 <span> Wind </span>
-                                <span id="wind"> 0.62 m/s </span>
+                                <span id="wind"> -.-- km/h </span>
                             </div>
 
                             <div class="sunrise-sunset">
                                 <div class="sunrise">
-                                    <img src="images/sunrise.png" alt="img">
-                                    <span id="sunrise"> 6:37 </span>
+                                    <img src="images/sunrise.png" alt="sunrise">
+                                    <span id="sunrise"> -:-- </span>
                                 </div>
                                 <div class="sunset">
-                                    <img src="images/sunset.png" alt="image">
-                                    <span id="sunset"> 19:52 </span>
+                                    <img src="images/sunset.png" alt="sunset">
+                                    <span id="sunset"> --:-- </span>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div id="weather-item" class="icon-info">
-                        <img src="" alt="image">
-                        <span class="description"> Moderate rain </span>
+                        <img src="" alt="weather">
+                        <span class="description"> ------ --- </span>
                     </div>
                 </div>
 
             </div>
             <div class="weekly-forecast">
                 <div class="next-day">
-                    <div class="date">tue</div>
-                    <div class="icon">
-                        <img src="" alt="image">
-                    </div>
-                    <div class="temp">25°</div>
+                    <div class="day-of-the-week">---</div>
+                    <img class="icon" src="" alt="weather">
+                    <div class="temp">--° / --°</div>
                 </div>
                 <div class="next-day">
-                    <div class="date">wed</div>
-                    <div class="icon">
-                        <img src="" alt="image">
-                    </div>
-                    <div class="temp">20°</div>
+                    <div class="day-of-the-week">---</div>
+                    <img class="icon" src="" alt="weather">
+                    <div class="temp">--° / --°</div>
                 </div>
                 <div class="next-day">
-                    <div class="date">thu</div>
-                    <div class="icon">
-                        <img src="" alt="image">
-                    </div>
-                    <div class="temp">19°</div>
+                    <div class="day-of-the-week">---</div>
+                    <img class="icon" src="" alt="weather">
+                    <div class="temp">--° / --°</div>
                 </div>
                 <div class="next-day">
-                    <div class="date">fir</div>
-                    <div class="icon">
-                        <img src="" alt="image">
-                    </div>
-                    <div class="temp">15°</div>
+                    <div class="day-of-the-week">---</div>
+                    <img class="icon" src="" alt="weather">
+                    <div class="temp">--° / --°</div>
                 </div>
-                <!-- <div class="next-day">
-                    <div class="date">sat</div>
-                    <div class="icon">
-                        <img src="" alt="image">
-                    </div>
-                    <div class="temp">-5°</div>
-                </div>
-                <div class="next-day">
-                    <div class="date">sun</div>
-                    <div class="icon">
-                        <img src="" alt="image">
-                    </div>
-                    <div class="temp">25°</div>
-                </div> -->
             </div>
         </div>
 
         <footer>
             <span>
-                This project was developed by <a target="_blank" href="https://github.com/g-nik1ta">Nikita Gonohov</a>
+                This project was developed by <a class="link" target="_blank" href="https://github.com/g-nik1ta">Nikita Gonohov</a>
             </span>
         </footer>
     </main>

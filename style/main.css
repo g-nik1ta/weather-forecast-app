@@ -71,26 +71,27 @@ main .content .today-forecast {
     padding: 20px 30px;
 }
 
-main .content .today-forecast .search-city {
+main .content .today-forecast .city {
     display: flex;
     justify-content: space-between;
     position: relative;
     align-items: flex-start;
 }
 
-main .content .today-forecast .search-city .location img {
-    width: 34px;
+main .content .today-forecast .city .location .location-img {
+    width: 33px;
     vertical-align: sub;
 }
 
-main .content .today-forecast .search-city .location span {
-    font-size: 34px;
+main .content .today-forecast .city .location .city-name {
+    font-size: 33px;
     font-family: Roboto-Light;
     color: #fff;
 }
 
-main .content .today-forecast .search-city .box-border {
-    min-width: 250px;
+main .content .today-forecast .city .gradient-box {
+    width: 255px;
+    min-width: 255px;
     position: relative;
     padding: 3px;
     margin-left: 10px;
@@ -101,8 +102,8 @@ main .content .today-forecast .search-city .box-border {
             rgba(1, 160, 249, 1) 100%);
 }
 
-main .content .today-forecast .search-city .box-border input {
-    padding: 10px 15px;
+main .content .today-forecast .city .gradient-box .search-city {
+    padding: 10px 65px 10px 15px;
     width: 100%;
     font-size: 18px;
     background-color: #315760;
@@ -112,19 +113,19 @@ main .content .today-forecast .search-city .box-border input {
     box-shadow: 0 0 30px -5px rgb(0 0 0 / 25%);
 }
 
-main .content .today-forecast .search-city .box-border input:focus {
+main .content .today-forecast .city .gradient-box .search-city:focus {
     outline: 0;
     box-shadow: 0 0 0 0.2rem rgb(114 237 242 / 25%);
 }
 
-input[type="search"]::-webkit-search-decoration,
-input[type="search"]::-webkit-search-cancel-button,
-input[type="search"]::-webkit-search-results-button,
-input[type="search"]::-webkit-search-results-decoration {
+.search-city::-webkit-search-decoration,
+.search-city::-webkit-search-cancel-button,
+.search-city::-webkit-search-results-button,
+.search-city::-webkit-search-results-decoration {
     display: none;
 }
 
-main .content .today-forecast .search-city .box-border img {
+main .content .today-forecast .city .gradient-box .search-city-img {
     width: 22px;
     position: absolute;
     cursor: pointer;
@@ -133,9 +134,23 @@ main .content .today-forecast .search-city .box-border img {
     transition: transform .2s ease-in-out;
 }
 
-main .content .today-forecast .search-city .box-border img:hover {
+main .content .today-forecast .city .gradient-box .search-city-img:hover {
     transform: scale(1.1);
 }
+
+main .content .today-forecast .city .gradient-box .my-city-img {
+    width: 22px;
+    position: absolute;
+    cursor: pointer;
+    right: 42px;
+    top: 12px;
+    transition: transform .2s ease-in-out;
+}
+
+main .content .today-forecast .city .gradient-box .my-city-img:hover {
+    transform: scale(1.1);
+}
+
 
 
 main .content .today-forecast .weather-information {
@@ -163,7 +178,7 @@ main .content .today-forecast .weather-information .text-info .temp {
     display: flex;
 }
 
-main .content .today-forecast .weather-information .text-info .temp > span {
+main .content .today-forecast .weather-information .text-info .temp .tempValue {
     font-size: 60px;
 }
 
@@ -184,17 +199,17 @@ main .content .today-forecast .weather-information .text-info .temp .units span:
     font-weight: 900;
 }
 
-main .content .today-forecast .weather-information .text-info .add-info {
+main .content .today-forecast .weather-information .text-info .main-info {
     width: 320px;
 }
 
-main .content .today-forecast .weather-information .text-info .add-info>div {
+main .content .today-forecast .weather-information .text-info .main-info>div {
     margin-bottom: 3px;
     display: flex;
     justify-content: space-between;
 }
 
-main .content .today-forecast .weather-information .text-info .add-info>div>span:first-child {
+main .content .today-forecast .weather-information .text-info .main-info>div>span:first-child {
     font-family: Roboto-Medium;
 }
 
@@ -228,9 +243,8 @@ main .content .today-forecast .weather-information .icon-info .description {
 }
 
 
+
 main .content .weekly-forecast {
-    /* display: flex;
-    justify-content: space-between; */
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: 1fr;
@@ -257,11 +271,11 @@ main .content .weekly-forecast .next-day:first-child {
     border-left: 5px solid rgba(255, 255, 255, 0.24);
 }
 
-main .content .weekly-forecast .next-day > .date {
+main .content .weekly-forecast .next-day .day-of-the-week {
     text-transform: uppercase;
 }
 
-main .content .weekly-forecast .next-day > .icon img {
+main .content .weekly-forecast .next-day .icon {
     width: 90px;
 }
 
@@ -282,10 +296,10 @@ main footer span {
     text-align: center;
 }
 
-main footer span a {
+main footer span .link {
     color: #c5c5c5;
 }
 
-main footer span a:hover {
+main footer span .link:hover {
     text-shadow: 3px 2px 3px rgba(255, 255, 255, .2);
 }
